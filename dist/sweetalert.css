@@ -71,8 +71,10 @@ body.stop-scrolling {
     padding: 0 10px;
     max-height: 0;
     webkit-transition: padding 0.15s, max-height 0.15s;
-    transition: padding 0.15s, max-height 0.15s; }
+    transition: padding 0.15s, max-height 0.15s;
+    display: none; }
     .sweet-alert .sa-error-container.show {
+      display: block;
       padding: 10px 0;
       max-height: 100px;
       webkit-transition: padding 0.2s, max-height 0.2s;
