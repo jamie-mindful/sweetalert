@@ -83,12 +83,25 @@ gulp.task('scripts', function() {
       src: './dev/gulpfile-wrap-template.js'
     }))
     .pipe(gulp.dest('dist')) // Developer version
-
+});
+// Concatenate & Minify JS
+gulp.task('scripts-prod', function () {
+  return browserify({
+    entries: './dev/sweetalert.es6.js',
+    debug: true
+  })
+    .transform(babelify)
+    .bundle()
+    .pipe(source('sweetalert-dev.js'))
+    .pipe(wrap({
+      src: './dev/gulpfile-wrap-template.js'
+    }))
     .pipe(rename('sweetalert.min.js'))
     .pipe(buffer())
     .pipe(uglify())
     .pipe(gulp.dest('dist')); // User version
 });
+
 
 gulp.task('test', function() {
   return gulp.src('./test/index.html')
@@ -105,4 +118,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'commonjs', 'watch', 'test']);
+gulp.task('default', ['lint', 'sass', 'scripts', 'scripts-prod', 'commonjs', 'watch', 'test']);
