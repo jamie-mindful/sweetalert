@@ -38,7 +38,7 @@ var injectedHTML =
     `<h2>Title</h2>
     <p>Text</p>
     <fieldset>
-      <input type="text" />
+      <input type="text" tabIndex="1" />
       <div class="sa-input-error"></div>
     </fieldset>` +
 
@@ -50,9 +50,9 @@ var injectedHTML =
 
     // Cancel and confirm buttons
     `<div class="sa-button-container">
-      <button class="cancel">Cancel</button>
+      <button class="cancel" tabIndex="2">Cancel</button>
       <div class="sa-confirm-button-container">
-        <button class="confirm">OK</button>` + 
+        <button class="confirm" tabIndex="3">OK</button>` + 
 
         // Loading animation
         `<div class="la-ball-fall">
