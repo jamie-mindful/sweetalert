@@ -71,7 +71,13 @@ var openModal = function(callback) {
 
   window.previousActiveElement = document.activeElement;
   var $okButton = $modal.querySelector('button.confirm');
-  $okButton.focus();
+  var $cancelButton = $modal.querySelector('button.cancel');
+  
+  if ($cancelButton.offsetParent) {
+    $cancelButton.focus();
+  } else {
+    $okButton.focus();
+  }
 
   setTimeout(function () {
     addClass($modal, 'visible');
