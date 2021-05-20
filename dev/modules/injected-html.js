@@ -4,7 +4,7 @@ var injectedHTML =
   `<div class="sweet-overlay" tabIndex="-1"></div>` +
 
   // Modal
-  `<div class="sweet-alert" tabindex="-1"  role="dialog" aria-modal="true">` +
+  `<div class="sweet-alert" tabindex="-1"  role="dialog" aria-modal="true" aria-labelledby="dialog_label" aria-describedby="dialog_desc">` +
 
     // Error icon
     `<div class="sa-icon sa-error">
@@ -35,8 +35,8 @@ var injectedHTML =
     `<div class="sa-icon sa-custom"></div>` +
 
     // Title, text and input
-    `<h2>Title</h2>
-    <p>Text</p>
+    `<h2 id="dialog_label" class="dialog_label">Title</h2>
+    <p class="dialog_desc" id="dialog_desc">Text</p>
     <fieldset>
       <input type="text" tabIndex="1" />
       <div class="sa-input-error"></div>
