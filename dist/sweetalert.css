@@ -140,7 +140,6 @@ body.stop-scrolling {
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
     .sweet-alert input:focus {
-      outline: none;
       box-shadow: 0px 0px 3px #c4e6f5;
       border: 1px solid #b4dbed; }
       .sweet-alert input:focus::-moz-placeholder {
@@ -184,7 +183,9 @@ body.stop-scrolling {
     margin: 26px 5px 0 5px;
     cursor: pointer; }
     .sweet-alert button:focus {
-      outline: none;
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
       box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05); }
     .sweet-alert button:hover {
       background-color: #7ecff4; }
